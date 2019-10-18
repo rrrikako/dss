@@ -1,0 +1,28 @@
+.contents{
+  position: absolute;
+  bottom: 20px;
+  height: 100%;
+  width: 100%;
+  background-image: url('https://www.aolp.org/wp-content/uploads/2018/08/iStock-820826126.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.8;
+  .contents__wrapper{
+    position: absolute;
+    z-index: 1;
+    padding-top: 150px;
+    margin-left: 40px;
+    &__post{
+      background-color: gray;
+      display: inline-block;
+      padding: 40px;
+      text-align: center;
+      &__image{
+        border-radius: 50%;
+        width:  115px;
+        height: 115px;
+      }
+    }
+  }
+}

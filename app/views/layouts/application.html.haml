@@ -9,7 +9,20 @@
   %body
     %header.header
       .header__bar
-        %h1.header__title
-          %a{href: "/"} Deep Sleep Sound
-        
+        .header__bar__center
+          %h1.header__bar__center__title
+            %a.header__bar__center__title--white{href: "/"} Deep Sleep Sound
+          %a.header__bar__center__nickname
+            Hello 
+            = current_user.nickname 
+            !
+          %p.header__bar__center__text
+            Find your favorite sound here
+        .header__bar__side
+          %a.header__bar__side__login{href: "#"}
+            Login
+          %a.header__bar__side__post{href: "#"}
+            Post
     = yield
+    %footer.footer
+      Copyright Deep Sleep Sound 2019.

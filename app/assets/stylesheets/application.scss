@@ -1,0 +1,66 @@
+@import "config/reset";
+@import "modules/index";
+@import "config/colors";
+@import "modules/side_bar";
+
+.header__bar{
+  width: 100%;
+  height: 150px;
+  position: fixed;
+  z-index: 2;
+  &__center{
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    right: 0;
+    left: 0;
+    font-weight:  bold;
+    &__title{
+      margin-bottom: 10px;
+      font-weight:  bold;
+      &--white{
+        color: $white;
+        font-size: 60px;
+        text-decoration: none;
+      }
+    }
+    &__nickname{
+      color: $white;
+      font-size: 20px;
+    }
+    &__text{
+      color: $white;
+      font-size: 20px;
+    }
+  }
+  &__side{
+    color: $white;
+    text-decoration: none;
+    font-size: 20px;
+    &__login{
+      background-color: green;
+      position: absolute;
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &__post{
+      background-color: blue;
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+.footer{
+  height: 20px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  border-top-style: solid;
+  border-top-color: gray;
+}
