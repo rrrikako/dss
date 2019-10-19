@@ -8,17 +8,16 @@
   position: fixed;
   &__category{
     margin-top: 20px;
-    margin-bottom: 30px;
     color: $white;
-    border-bottom: solid;
-    border-bottom-color: gray;
     &__logo{
-      margin: 5px;
       text-align: center;
+      padding: 20px;
     }
     &__count{
-      margin-left: 20px;
-      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: solid;
+      border-bottom-color: gray;
+      padding-bottom: 30px;
     }
   }
 }

@@ -1,0 +1,9 @@
+.contents
+  .group_new__wrapper
+    = form_for @group do |f|
+      .group_new__form
+        = f.label :category, class: 'group_new__form__right'
+        = f.text_field :name, class: 'group_new__form__right', placeholder: 'Type category name'
+        = f.label :backimage, class: 'group_new__form__right'
+        = f.text_field :image, class: 'group_new__form__right', placeholder: 'Background Image URL'
+        = f.submit class: 'group_new__submit'
