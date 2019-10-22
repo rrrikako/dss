@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
   
   def index
     @groups = Group.all
+    @posts = Post.all
   end
 
   def new
@@ -21,6 +22,7 @@ class GroupsController < ApplicationController
   def show
     @groups = Group.all
     @group = Group.find(params[:id])
+    @posts = @group.posts.includes(:user)
   end
 
   private

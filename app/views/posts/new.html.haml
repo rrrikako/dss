@@ -1,1 +1,8 @@
-hello world!
+.group_show__wrapper
+  %input{class: "group_show__wrapper__image", type: "hidden", value: @group.image}
+  .sound_post
+    = form_for [@group, @post] do |f|
+      = f.text_field :title, class: "sound_post__title", placeholder: "title"
+      = f.text_field :image, class: "sound_post__image", placeholder: "image url"
+      = f.text_field :sound, class: "sound_post__sound", placeholder: "mp3 url"
+      = f.submit class: "sound_post__submit"

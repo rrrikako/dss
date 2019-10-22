@@ -1,5 +1,6 @@
-.contents__wrapper__post
-  %img#button.contents__wrapper__post__image{src: "https://i.pinimg.com/564x/25/64/51/256451037a1f7fd3811633892279dcb1.jpg"}
-  .contents__wrapper__audio
-  .contents__wrapper__title
-    Tokyo
+- @posts.each do |post|
+  .contents__wrapper__post
+    %img.contents__wrapper__post__image{src: "#{post.image}", id: "image_#{post.id}", onClick: "playSound('audio_#{post.id}');"}
+      %audio.contents__wrapper__audio{src: "#{post.sound}", id: "audio_#{post.id}", type: "audio/mp3"}
+    .contents__wrapper__title
+      = post.title
