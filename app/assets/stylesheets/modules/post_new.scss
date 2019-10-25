@@ -1,4 +1,8 @@
 .sound_post{
   position: absolute;
-  margin-top: 200px;
+  margin-top: 400px;
+  left: 300px;
+  .sound_post{
+    position: absolute;
+  }
 }

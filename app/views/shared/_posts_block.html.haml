@@ -2,5 +2,5 @@
   .contents__wrapper__post
     %img.contents__wrapper__post__image{src: "#{post.image}", id: "image_#{post.id}", onClick: "playSound('audio_#{post.id}');"}
       %audio.contents__wrapper__audio{src: "#{post.sound}", id: "audio_#{post.id}", type: "audio/mp3"}
-    .contents__wrapper__title
+    .contents__wrapper__post__title
       = post.title

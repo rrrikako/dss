@@ -1,5 +1,5 @@
 .side_bar
-  .side_bar__category
+  .side_bar__category 
     - @groups.each do |group|
       .side_bar__category__block
         = link_to group_path(group.id) do
@@ -8,4 +8,7 @@
         .side_bar__category__block__count
           = group.posts.length
           sounds
+  
+        
+
         

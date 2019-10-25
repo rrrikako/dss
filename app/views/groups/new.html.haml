@@ -2,8 +2,15 @@
   .group_new__wrapper
     = form_for @group do |f|
       .group_new__form
-        = f.label :category, class: 'group_new__form__right'
-        = f.text_field :name, class: 'group_new__form__right', placeholder: 'Type category name'
-        = f.label :backimage, class: 'group_new__form__right'
-        = f.text_field :image, class: 'group_new__form__right', placeholder: 'Background Image URL'
-        = f.submit class: 'group_new__submit'
+        .group_new__form__name
+          .group_new__form__left
+            = f.label :category
+          .group_new__form__right
+            = f.text_field :name, class: "group_new__form__right__field", placeholder: 'Type category name'
+        .group_new__form__image
+          .group_new__form__left
+            = f.label :"Background Image"
+          .group_new__form__right
+            = f.text_field :image, class: "group_new__form__right__field", placeholder: 'Background Image URL'
+        .group_new__form__submit
+          = f.submit class: "group_new__form__submit__button"

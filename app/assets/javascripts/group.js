@@ -3,9 +3,9 @@ $(document).on('turbolinks:load',function(){
   var backgroundImage = $('.group_show__wrapper__image').val();
   $(".group_show__wrapper").css("background-image","url("+ backgroundImage +")");
 
-  //group_indexとgroup_showの音楽再生
 });
 
+//group_indexとgroup_showの音楽再生
 function playSound(postSound){
   var audio = document.getElementById(postSound);
   if(audio.paused){
@@ -15,3 +15,5 @@ function playSound(postSound){
     audio.pause();
   }
   }
+
+

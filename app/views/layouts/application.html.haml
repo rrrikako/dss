@@ -21,9 +21,9 @@
           !
         .header__bar__side
           = link_to "Logout", destroy_user_session_path, method: :delete, class: 'header__bar__side__logout'
-          = link_to "make a new category", new_group_path, class: 'header__bar__side__post'
+          = link_to "New Category", new_group_path, class: 'header__bar__side__post'
           %a.header__bar__side__mypage{href: "#"}
-            my page
+            My Page
       - else
         .header__bar__side
           = link_to "Login", new_user_session_path, class: 'header__bar__side__login'
