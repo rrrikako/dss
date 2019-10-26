@@ -1,0 +1,67 @@
+.group_new__wrapper{
+  position: absolute;
+  top: 50%;
+  left: 500px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  .group_new__form{
+    &__left{
+      display: inline-block;
+      margin-right: 50px;
+      margin-top: 30px;
+      color: $white;
+      font-size: 25px;
+      padding: 10px;
+      border-style: solid;
+      border-collapse: $white;
+      border-radius: 10px;
+      transition: all .3s;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: $dark-blue2;
+    }
+    .group_new__form__right{
+      display: inline-block;
+      &__field{
+        width: 400px;
+        height: 30px;
+        border-style: solid;
+        border-color: $white;
+        border-width: 3px;
+        border-radius: 10px;
+        position: relative;
+        display: inline-block;
+        margin-right: 60px;
+        margin-top: 30px;
+        padding: 10px;
+        transition: all .3s;
+        background: none;
+        padding-left: 15px;
+        background-color: rgba(21, 21, 70, 0.3);
+        &::placeholder{
+          color: rgba(245, 245, 245, 0.7);
+          font-size: 25px;
+          font-family: 'Times New Roman', Times, serif;
+        }
+      }
+    }
+    &__submit__button{
+      margin-top: 30px;
+      position: absolute;
+      display: inline-block;
+      color: $white;
+      background: none;
+      font-size: 25px;
+      padding: 10px;
+      border-style: solid;
+      border-color: $white;
+      border-width: 3px;
+      border-radius: 10px;
+      transition: all .3s;
+      font-family: 'Times New Roman', Times, serif;
+      left: 140px;
+      background-color: $dark-blue2;
+      &:hover{
+        background-color: $weak-white;
+      }
+    }
+  }
+}
