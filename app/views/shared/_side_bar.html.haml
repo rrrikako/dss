@@ -1,13 +1,14 @@
 .side_bar
-  .side_bar__category 
-    - @groups.each do |group|
-      .side_bar__category__block
-        = link_to group_path(group.id) do
-          .side_bar__category__block__logo
-            = group.name
-        .side_bar__category__block__count
-          = group.posts.length
-          sounds
+  .side_bar__inner
+    %ul.side_bar__inner__category 
+      - @groups.each do |group|
+        %li.side_bar__inner__category__block
+          = link_to group_path(group.id) do
+            .side_bar__inner__category__block__logo
+              = group.name
+          .side_bar__inner__category__block__count
+            = group.posts.length
+            sounds
   
         
 

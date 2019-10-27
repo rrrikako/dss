@@ -21,8 +21,10 @@
   opacity: 0.78;
   .contents__wrapper{
     background-color: rgba(245, 245, 245, 0.4);
-    margin-right: 250px;
     position: absolute;
     margin-top: 350px;
+    padding: 40px;
+    right: 0;
+    left: 0;
   }
 }
