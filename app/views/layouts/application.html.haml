@@ -7,26 +7,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header.header
-      .header__bar
-        .header__bar__center
-          %h1.header__bar__center__title
-            %a.header__bar__center__title--white{href: "/"} Deep Sleep Sound 
-          %p.header__bar__center__text
-            Find your favorite sound here
-      - if user_signed_in?
-        %p.header__bar__nickname
-          Hello
-          = current_user.nickname
-          !
-        .header__bar__side
-          = link_to "Logout", destroy_user_session_path, method: :delete, class: 'header__bar__side__logout'
-          = link_to "New Category", new_group_path, class: 'header__bar__side__post'
-          = link_to "My Page", user_path(current_user.id), class: 'header__bar__side__mypage'
-      - else
-        .header__bar__side
-          = link_to "Login", new_user_session_path, class: 'header__bar__side__login'
-          = link_to "Signup", new_user_registration_path, class: 'header__bar__side__signup'
     = yield
     %footer.footer
       Copyright Deep Sleep Sound 2019.
