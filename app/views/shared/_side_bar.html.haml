@@ -1,5 +1,11 @@
+%label.side_bar__wrapper__icon
+  = fa_icon 'minus-square', class: 'side_bar__wrapper__icon--white'
 .side_bar
   .side_bar__inner
+    = form_tag('/groups/search', method: :get) do
+      %input.side_bar__inner__search{name: "keyword", placeholder: "group search", type: "text", value: "", autocomplete: "off"}
+        %label.side_bar__inner__search__icon
+          = fa_icon 'search'
     %ul.side_bar__inner__category 
       - @groups.each do |group|
         %li.side_bar__inner__category__block
@@ -9,7 +15,7 @@
           .side_bar__inner__category__block__count
             = group.posts.length
             sounds
-  
+
         
 
         

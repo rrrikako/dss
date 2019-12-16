@@ -2,7 +2,7 @@
   .header__bar
     .header__bar__center
       %h1.header__bar__center__title
-        %a.header__bar__center__title--white{href: "/"} Deep Sleep Sound 
+        = link_to 'Deep Sleep Sound', root_path, class: "header__bar__center__title--white"
       %p.header__bar__center__text
         Find your favorite sound here
   - if user_signed_in?

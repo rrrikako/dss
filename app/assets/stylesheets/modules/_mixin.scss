@@ -1,0 +1,49 @@
+@mixin linkButton{
+  text-decoration: none;
+  color: $white;
+  position: absolute;
+  padding: 10px;
+  border-style: solid;
+  border-collapse: $white;
+  border-radius: 10px;
+}
+
+//without position: absolute;
+@mixin formButton{
+  text-decoration: none;
+  color: $black;
+  padding: 10px;
+  border-style: solid;
+  border-collapse: $white;
+  border-radius: 10px;
+  border-width: 1px;
+  background: rgba(245, 245, 245, 0.7);
+}
+
+@mixin label{
+  padding: 10px;
+  display: inline-block;
+  margin-top: 30px;
+  color: $white;
+  font-size: 25px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: $white;
+  transition: all .3s;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: $dark-blue2;
+}
+
+@mixin input{
+  border-style: solid;
+  border-color: $white;
+  border-width: 3px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px;
+  transition: all .3s;
+  background: none;
+  padding-left: 15px;
+  background-color: rgba(21, 21, 70, 0.3);
+}

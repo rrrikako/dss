@@ -1,0 +1,28 @@
+.contents__post-input__wrapper{
+  padding-top: 230px;
+  &__form{
+    margin-left: 15%;
+    &__label{
+      @include label;
+      margin-right: 50px;
+    }
+    &__title,&__image,&__sound,&__submit{
+      height: 30px;
+      width: 300px;
+      @include input;
+      color: $white;
+      font-size: 25px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    &__image,&__sound{
+      width: 700px;
+    }
+    &__submit{
+      height: 50px;
+      margin-left: 30%;
+      &:hover{
+        background-color: $weak-white;
+      }
+    }
+  }
+}
