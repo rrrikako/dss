@@ -67,12 +67,15 @@ $(document).on('turbolinks:load',function(){
 //group_indexとgroup_showの音楽再生
 function playSound(postSound){
   var audio = document.getElementById(postSound);
+  var allAudios = document.getElementsByTagName('audio');
   if(audio.paused){
     audio.play();
   }
   else{
     audio.pause();
+    audio.currentTime = 0;
   }
-  }
+ }
+
 
 

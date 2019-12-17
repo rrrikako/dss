@@ -20,6 +20,7 @@
         display: inline-block;
         margin-right: 60px;
         @include input;
+        color: white;
         &::placeholder{
           color: rgba(245, 245, 245, 0.7);
           font-size: 25px;

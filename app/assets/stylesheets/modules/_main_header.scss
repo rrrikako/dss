@@ -44,7 +44,9 @@
     z-index: 2;
     margin-top: 135px;
     color: $white;
-    left: 600px;
+    right: 0;
+    left: 0;
+    text-align: center;
     font-size: 25px;
     font-weight:  bold;
     letter-spacing: 1px;
@@ -79,6 +81,16 @@
       margin-top: 250px;
       left: 500px;
       transition: all .3s;
+      &:hover{
+        background-color: $weak-white;
+      }
+    }
+    &__logout{
+      @include linkButton;
+      transform: translateY(-50%);
+      margin: 60px;
+      margin-top: 80px;
+      left: 40px;
       &:hover{
         background-color: $weak-white;
       }
