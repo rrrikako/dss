@@ -47,3 +47,29 @@
   padding-left: 15px;
   background-color: rgba(21, 21, 70, 0.3);
 }
+
+@mixin postBlock{
+  margin: 30px;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  background:  rgba(245, 245, 245, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+} 
+
+@mixin postImage{
+  margin: 20px;
+  border-radius: 50%;
+  width:  100px;
+  height: 100px;
+  filter: drop-shadow(3px 3px 3px #707070);
+  transition-duration: 0.5s;
+}
+
+@mixin postTitle{
+  color: $black;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 15px;
+}

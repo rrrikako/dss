@@ -7,12 +7,15 @@
   background-size: 100% auto; 
   background-attachment: fixed;
   opacity: 0.78;
-  .contents__wrapper{
-    background-color: rgba(245, 245, 245, 0.4);
+  &__wrapper{
+    background-image: url('https://www.aolp.org/wp-content/uploads/2018/08/iStock-820826126.jpg');
+    background-size: 100% auto; 
+    background-attachment: fixed;  
     position: absolute;
     margin-top: 350px;
     padding: 40px;
     right: 0;
     left: 0;
+    height: auto;
   }
 }

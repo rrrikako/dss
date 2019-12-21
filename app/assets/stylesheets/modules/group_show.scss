@@ -22,7 +22,7 @@
       background-color: rgba(245, 245, 245, 0.3);
     }
    }
-  .contents__wrapper{
+  .contents__wrapper-show{
     position: absolute;
     top: 350px;
     background-color: rgba(245, 245, 245, 0.4);
@@ -31,8 +31,17 @@
     display: inline-block;
     text-align: center;
     &__post{
-    margin-right: 30px;
-    padding: 40px;
+      @include postBlock;
+      &__image{
+        @include postImage;
+        &:hover{
+          transform: scale(1.1,1.1); 
+          cursor: pointer;
+        }
+      }
+      &__title{
+        @include postTitle;
+      }
     }
   }
 }

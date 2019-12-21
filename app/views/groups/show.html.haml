@@ -22,11 +22,11 @@
   %input{class: "group_show__wrapper__image", type: "hidden", value: @group.image}
   %a{href: "/groups/#{@group.id}/posts/new", class: "group_show__wrapper__post"}
     New Sound
-  .contents__wrapper
+  .contents__wrapper-show
     - @posts.each do |post|
-      .contents__wrapper__post
-        %img.contents__wrapper__post__image{src: "#{post.image}", id: "image_#{post.id}", onClick: "playSound('audio_#{post.id}');"}
-          %audio.contents__wrapper__audio{src: "#{post.sound}", id: "audio_#{post.id}", type: "audio/mp3"}
-        .contents__wrapper__post__title
+      .contents__wrapper-show__post
+        %img.contents__wrapper-show__post__image{src: "#{post.image}", id: "image_#{post.id}", onClick: "playSound('audio_#{post.id}');"}
+          %audio.contents__wrapper-show__audio{src: "#{post.sound}", id: "audio_#{post.id}", type: "audio/mp3"}
+        .contents__wrapper-show__post__title
           = post.title
 
