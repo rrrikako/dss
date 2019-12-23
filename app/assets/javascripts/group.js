@@ -2,15 +2,18 @@ $(document).on('turbolinks:load',function(){
   //group_showの背景画像
   var backgroundImage = $('.group_show__wrapper__image').val();
   $(".group_show__wrapper").css("background-image","url("+ backgroundImage +")");
+  $(".group_show__wrapper").css("background-size","100%", "auto");
+  $(".group_show__wrapper").css("background-attachment", "fixed");
 
   //サイドメニュー表示
   $('.side_bar__wrapper__icon').mouseover(function(){
     $('.side_bar').css('height', 'calc(100vh - 120px)');
   }); 
-
   $('.side_bar').mouseleave(function(){
     $('.side_bar').css('height', '0');
   }); 
+
+  
 
   //グループ検索
   var search_list = $('.side_bar__inner__category');
