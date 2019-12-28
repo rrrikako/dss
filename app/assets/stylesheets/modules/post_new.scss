@@ -1,8 +1,43 @@
-.sound_post{
-  position: absolute;
-  margin-top: 400px;
-  left: 300px;
-  .sound_post{
+.group_show__wrapper{
+  &__sound-post{
     position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    text-align: center;
+    &__block{
+      &--left{
+        @include label;
+        background: none;
+        margin-right: 50px;
+        border-collapse: $white;  
+      }
+      &__title,&__image,&__sound{
+        @include input;
+        width: 400px;
+        height: 30px;
+        position: relative;
+        display: inline-block;
+        margin-right: 60px;
+        background: rgba(245, 245, 245, 0.3);
+        color: $white;
+        &::placeholder{
+          color: rgba(245, 245, 245, 0.7);
+          font-size: 25px;
+          font-family: 'Times New Roman', Times, serif;
+        }
+      }
+      &__submit{
+        @include label;
+        display: inline-block;
+        color: $white;
+        background: none;
+        border-width: 3px;
+        left: 140px;
+        &:hover{
+          background-color: $weak-white;
+        }
+      }
+    }
   }
 }

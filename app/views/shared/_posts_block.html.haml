@@ -4,3 +4,6 @@
       %audio.contents__wrapper__audio{src: "#{post.sound}", id: "audio_#{post.id}", type: "audio/mp3"}
     .contents__wrapper__post__title
       = post.title
+    - if user_signed_in? && current_user.id == post.user_id
+      = link_to 'Edit', "/users/#{current_user.id}/posts/#{post.id}/edit", method: :get, class: "contents__wrapper__post__op"
+      = link_to 'Delete', "/users/#{current_user.id}/posts/#{post.id}", method: :delete, data: { confirm: '本当に削除しますか？' }, class: "contents__wrapper__post__op"

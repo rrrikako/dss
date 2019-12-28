@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   
   def index
     @groups = Group.all
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   def new
@@ -22,7 +22,15 @@ class GroupsController < ApplicationController
   def show
     @groups = Group.all
     @group = Group.find(params[:id])
-    @posts = @group.posts.includes(:user)
+    @posts = @group.posts.includes(:user).order("created_at DESC")
+  end
+
+  def search
+    @groups = Group.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
+    respond_to do |format|
+      format.html
+      format.json
+     end
   end
 
   private

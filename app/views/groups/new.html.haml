@@ -1,3 +1,10 @@
+%header.header
+  .header__bar
+    .header__bar__center
+      %h1.header__bar__center__title
+        = link_to 'Deep Sleep Sound', root_path, class: "header__bar__center__title--white"
+      %p.header__bar__center__text
+        Find your favorite sound here
 .contents
   .group_new__wrapper
     = form_for @group do |f|

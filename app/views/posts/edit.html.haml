@@ -1,0 +1,27 @@
+%header.header
+  .header__bar
+    .header__bar__center
+      %h1.header__bar__center__title
+        %a.header__bar__center__title--white{href: "/"} 
+          Deep Sleep Sound 
+      %p.header__bar__center__text
+        Find your favorite sound here
+.contents
+  .contents__post-input__wrapper
+    = form_for [@user, @post], url: user_post_path, method: :patch do |f|
+      .contents__post-input__wrapper__form
+        %span.contents__post-input__wrapper__form__label
+          Sound Name
+        = f.text_field :title, placeholder: "Sound Name", value: "#{@post.title}", class: "contents__post-input__wrapper__form__title"
+      .contents__post-input__wrapper__form
+        %span.contents__post-input__wrapper__form__label
+          Image URL
+        = f.text_field :image, placeholder: "Image URL", value: "#{@post.image}", class: "contents__post-input__wrapper__form__image"
+      .contents__post-input__wrapper__form
+        %span.contents__post-input__wrapper__form__label
+          mp3 URL
+        = f.text_field :sound, placeholder: "mp3 URL", value: "#{@post.sound}", class: "contents__post-input__wrapper__form__sound"
+      .contents__post-input__wrapper__form
+        = f.submit 'EDIT', class: "contents__post-input__wrapper__form__submit"
+
+

@@ -1,14 +1,36 @@
-.side_bar__wrapper
-  = render partial: 'shared/side_bar', collections: @groups
 .group_show__wrapper
-  %input{class: "group_show__wrapper__image", type: "hidden", value: @group.image}
-  %a{href: "/groups/#{@group.id}/posts/new", class: "group_show__wrapper__post"}
-    New Sound
-  .contents__wrapper
+  %input{class: "group_show__wrapper__image", type: "hidden", value: @group.image}  
+  %header.header
+    .header__bar
+      .header__bar__center
+        %h1.header__bar__center__title
+          = link_to "#{@group.name}", root_path, class: "header__bar__center__title--white"
+        %p.header__bar__center__text
+          Find your favorite sound here
+    - if user_signed_in?
+      %p.header__bar__nickname
+        = current_user.nickname
+      .header__bar__side
+        .header__bar__side__logout
+          = link_to "Logout", destroy_user_session_path, method: :delete, class: 'header__bar__side__logout--button'
+        .header__bar__side__middle
+          = link_to "New Category", new_group_path, class: 'header__bar__side__middle__post'
+          = link_to "My Page", user_path(current_user.id), class: 'header__bar__side__middle__mypage'
+          = link_to "New Sound", new_group_post_path(@group.id), class: 'header__bar__side__middle__sound'
+    - else
+      .header__bar__side
+        = link_to "Login", new_user_session_path, class: 'header__bar__side__login'
+        = link_to "Signup", new_user_registration_path, class: 'header__bar__side__signup'
+  .side_bar__wrapper
+    = render partial: 'shared/side_bar', collections: @groups
+  .contents__wrapper-block
     - @posts.each do |post|
-      .contents__wrapper__post
-        %img.contents__wrapper__post__image{src: "#{post.image}", id: "image_#{post.id}", onClick: "playSound('audio_#{post.id}');"}
-          %audio.contents__wrapper__audio{src: "#{post.sound}", id: "audio_#{post.id}", type: "audio/mp3"}
-        .contents__wrapper__post__title
+      .contents__wrapper-block__post
+        %img.contents__wrapper-block__post__image{src: "#{post.image}", id: "image_#{post.id}", onClick: "playSound('audio_#{post.id}');"}
+          %audio.contents__wrapper-block__audio{src: "#{post.sound}", id: "audio_#{post.id}", type: "audio/mp3"}
+        .contents__wrapper-block__post__title
           = post.title
+        - if user_signed_in? && current_user.id == post.user_id
+          = link_to 'Edit', "/users/#{current_user.id}/posts/#{post.id}/edit", method: :get, class: "contents__wrapper__post__op"
+          = link_to 'Delete', "/users/#{current_user.id}/posts/#{post.id}", method: :delete, data: { confirm: '本当に削除しますか？' }, class: "contents__wrapper__post__op"
 

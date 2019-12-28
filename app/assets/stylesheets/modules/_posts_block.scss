@@ -1,23 +1,27 @@
 .contents__wrapper__post{
-  margin-right: 30px;
-  display: inline-block;
-  padding: 10px;
-  padding-left: 40px;
-  text-align: center;
+  @include postBlock;
   &__image{
-    border-radius: 50%;
-    width:  100px;
-    height: 100px;
-    filter: drop-shadow(3px 3px 3px #707070);
-    transition-duration: 0.5s;
+    @include postImage;
   }
   &__image:hover{
     transform: scale(1.1,1.1); 
     cursor: pointer;
   }
   &__title{
-    color: black;
-    font-size: 20px;
+    color: $black;
+    font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 15px;
+  }
+  &__op{
+    color: $black;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 8px;
+    text-decoration: none;
+    &:hover{
+      color: blue; 
+      cursor: pointer;
+    }
   }
 }

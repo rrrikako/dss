@@ -1,27 +1,28 @@
+= render './groups/main_header'
 .contents
   .user__wrapper
-    %h2.user__wrapper__title Sign up
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
-      .field
-        =f.label :nickname, class: "signup__label"
-        %br/
-        =f.text_field :nickname, autofocus: true, class: "signup__input"
-      .field
-        = f.label :email, class: "signup__label" 
-        %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: "signup__input"
-      .field
-        = f.label :password, class: "signup__label"
-        - if @minimum_password_length
-          %em
-            (#{@minimum_password_length} characters minimum)
-        %br/
-        = f.password_field :password, autocomplete: "new-password", class: "signup__input"
-      .field
-        = f.label :password_confirmation, class: "signup__label"
-        %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password", class: "signup__input"
-      .actions
-        = f.submit "Sign up", class: "signup__submit"
+      .user__wrapper__form
+        .user__wrapper__form--left
+          =f.label :nickname, class: "signup__label"
+        .user__wrapper__form--right
+          =f.text_field :nickname, autofocus: true, class: "user__wrapper__form--right--self"
+      .user__wrapper__form
+        .user__wrapper__form--left
+          = f.label :email, class: "signup__label" 
+        .user__wrapper__form--right
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "user__wrapper__form--right--self"
+      .user__wrapper__form
+        .user__wrapper__form--left
+          = f.label :password, class: "signup__label"
+        .user__wrapper__form--right
+          = f.password_field :password, autocomplete: "new-password", class: "user__wrapper__form--right--self", placeholder: "6 characters minimum"
+      .user__wrapper__form
+        .user__wrapper__form--left
+          = f.label :password_confirmation, class: "signup__label"
+        .user__wrapper__form--right
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "user__wrapper__form--right--self"
+      .user__wrapper__submit
+        = f.submit "Sign up", class: "user__wrapper__submit--self"
     = render "devise/shared/links"

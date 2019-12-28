@@ -1,19 +1,22 @@
+= render './groups/main_header'
 .contents
   .user__wrapper
-    %h2 Log in
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field
-        = f.label :email
-        %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      .field
-        = f.label :password
-        %br/
-        = f.password_field :password, autocomplete: "current-password"
+      .user__wrapper__form
+        .user__wrapper__form--left
+          = f.label :email
+        .user__wrapper__form--right
+          = f.email_field :email, autofocus: true, class: "user__wrapper__form--right--self"
+      .user__wrapper__form
+        .user__wrapper__form--left
+          = f.label :password
+        .user__wrapper__form--right
+          = f.password_field :password, class: "user__wrapper__form--right--self"
       - if devise_mapping.rememberable?
-        .field
-          = f.check_box :remember_me
+        .user__wrapper__form__checkbox
+          = f.check_box :remember_me, class: "user__wrapper__form__checkbox--box"
           = f.label :remember_me
-      .actions
-        = f.submit "Log in"
-    = render "devise/shared/links"
+      .user__wrapper__submit
+        = f.submit "Log in", class: "user__wrapper__submit--self"
+      .user__wrapper__url
+        = render "devise/shared/links"

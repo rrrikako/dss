@@ -1,0 +1,74 @@
+@mixin linkButton{
+  text-decoration: none;
+  color: $white;
+  padding: 10px;
+  border-style: solid;
+  border-collapse: $white;
+  border-radius: 10px;
+}
+
+//without position: absolute;
+@mixin formButton{
+  text-decoration: none;
+  color: $black;
+  padding: 10px;
+  border-style: solid;
+  border-collapse: $white;
+  border-radius: 10px;
+  border-width: 1px;
+  background: rgba(245, 245, 245, 0.7);
+}
+
+@mixin label{
+  padding: 10px;
+  display: inline-block;
+  margin-top: 30px;
+  color: $white;
+  font-size: 25px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: $white;
+  transition: all .3s;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: $dark-blue2;
+}
+
+@mixin input{
+  border-style: solid;
+  border-color: $white;
+  border-width: 3px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px;
+  transition: all .3s;
+  background: none;
+  padding-left: 15px;
+  background-color: rgba(21, 21, 70, 0.3);
+}
+
+@mixin postBlock{
+  margin: 30px;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  background:  rgba(245, 245, 245, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+} 
+
+@mixin postImage{
+  margin: 20px;
+  border-radius: 50%;
+  width:  100px;
+  height: 100px;
+  filter: drop-shadow(3px 3px 3px #707070);
+  transition-duration: 0.5s;
+}
+
+@mixin postTitle{
+  color: $black;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 15px;
+}
