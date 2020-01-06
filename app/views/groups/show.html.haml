@@ -26,7 +26,7 @@
   .contents__wrapper-block
     - @posts.each do |post|
       .contents__wrapper-block__post
-        %img.contents__wrapper-block__post__image{src: "#{post.image}", id: "image_#{post.id}", onClick: "playSound('audio_#{post.id}');"}
+        %img.contents__wrapper-block__post__image{src: "#{asset_path "#{post.image}"}", id: "image_#{post.id}", onClick: "playSound('audio_#{post.id}');"}
           %audio.contents__wrapper-block__audio{src: "#{post.sound}", id: "audio_#{post.id}", type: "audio/mp3"}
         .contents__wrapper-block__post__title
           = post.title
