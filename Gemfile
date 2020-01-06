@@ -66,3 +66,4 @@ gem 'devise'
 gem 'pry-rails'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'rails_12factor', group: :production
