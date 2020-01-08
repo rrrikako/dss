@@ -22,3 +22,38 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# DSS DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+
+### Association
+- has_many :posts
+
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|
+|image|string|
+|sound|text|
+|user_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|image|text|
+
+### Association
+- has_many :posts
+
+
