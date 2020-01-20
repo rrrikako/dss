@@ -4,6 +4,7 @@ $(document).on('turbolinks:load',function(){
   $(".group_show__wrapper").css("background-image","url("+ backgroundImage +")");
   $(".group_show__wrapper").css("background-size","100%", "auto");
   $(".group_show__wrapper").css("background-attachment", "fixed");
+  $(".group_show__wrapper").css("padding-top", "120px");
 
   //サイドメニュー表示
   $('.side_bar__wrapper__icon').mouseover(function(){
