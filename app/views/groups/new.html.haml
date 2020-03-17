@@ -1,10 +1,23 @@
-%header.header
-  .header__bar
-    .header__bar__center
-      %h1.header__bar__center__title
-        = link_to 'Deep Sleep Sound', root_path, class: "header__bar__center__title--white"
-      %p.header__bar__center__text
-        Find your favorite sound here
+.header__bar
+  .header__bar__center
+    %h1.header__bar__center__title
+      = link_to 'Deep Sleep Sound', root_path, class: "header__bar__center__title--white"
+    %p.header__bar__center__text
+      Find your favorite sound here
+- if user_signed_in?
+  %p.header__bar__nickname
+    Hello
+    = current_user.nickname
+    !
+  .header__bar__side
+    .header__bar__side__logout
+      = link_to "Logout", destroy_user_session_path, method: :delete, class: 'header__bar__side__logout--button'
+- else
+  .header__bar__side
+    = link_to "Login", new_user_session_path, class: 'header__bar__side__login'
+    = link_to "Signup", new_user_registration_path, class: 'header__bar__side__signup'
+.side_bar__wrapper
+  = render partial: 'shared/side_bar', collections: @groups
 .contents
   .group_new__wrapper
     = form_for @group do |f|
